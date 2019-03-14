@@ -1,0 +1,23 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "Simple todo list ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/znewell24/node.js-todo-list.git"
+  },
+  "author": "znewell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/znewell24/node.js-todo-list/issues"
+  },
+  "homepage": "https://github.com/znewell24/node.js-todo-list#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}
