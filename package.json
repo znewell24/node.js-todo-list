@@ -18,6 +18,7 @@
   "homepage": "https://github.com/znewell24/node.js-todo-list#readme",
   "dependencies": {
     "ejs": "^2.6.1",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "pg": "^7.9.0"
   }
 }
