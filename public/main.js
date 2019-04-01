@@ -2,11 +2,11 @@ function getItems() {
     $(document).ready(function () {
         $.getJSON("/getTodoList", function (data) {
             $.each(data, function(i, item) {
-                display = "<h3>" + item.name + "</h3>" +
-                           "<p>" + item.due_date + "</p><br/>";
+                var display = "<h3>" + JSON.stringify(item.name) + "</h3>" +
+                           "<p>" + JSON.stringify(item.due_date) + "</p><br/>";
                 $(display).appendTo("todoList");
             }); 
-            document.getElementById("todoList").innerHTML = data;
+            // document.getElementById("todoList").innerHTML = data;
         });
     });
 }
