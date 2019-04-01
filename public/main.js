@@ -5,7 +5,7 @@ function getItems() {
             // obj = JSON.stringify(data.items);
             // document.getElementById("todoList").innerHTML = obj;
             $.each(data, function(i,item){
-                JSON.stringify(item);
+                // JSON.stringify(item);
                 content += '<p>' + item.name + '</p>';
                 content += '<p>' + item.due_date + '</p>';
                 content += '<br/>';
