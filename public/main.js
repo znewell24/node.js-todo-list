@@ -12,6 +12,8 @@ function getItems() {
     });
 }
 
+const flatpickr = require("flatpickr");
+
 var options = {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
@@ -19,4 +21,4 @@ var options = {
         alert("dates: " + selectedDates + " - dateStr: " + dateStr + " instance: " + instance);
     },
 };
-flatpickr(document.querySelector("#time_due"), options);
+$("time_due").flatpickr(options);
