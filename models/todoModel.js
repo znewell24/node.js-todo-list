@@ -10,9 +10,11 @@ function getAllItems(callback) {
     });
 
     pool.connect((err, client, done) => {
-        if (err) throw err
+        if (err) {
+            throw err;
+        }
 
-        client.query('SELECT * FROM items', [1], (err, res) => {
+        client.query('SELECT * FROM items').then((res) => {
 
             if (err) {
                 console.log(err)
@@ -20,7 +22,7 @@ function getAllItems(callback) {
             } 
 
             callback(null, res.rows);
-
+            pool.end();
         });
     });
 

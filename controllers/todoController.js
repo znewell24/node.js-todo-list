@@ -6,10 +6,10 @@ function getItems(request, response) {
     model.getAllItems(function(err, data) {
             data = {
                 success: true
-                ,scriptures: data
+                ,items: data
             };
 
-            response.json(data);
+            response.json(data.items);
     });
 }
 
