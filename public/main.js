@@ -1,8 +1,15 @@
 function getItems() {
     $(document).ready(function () {
         $.getJSON("/getTodoList", function (data) {
-            
-            document.getElementById("todoList").innerHTML = JSON.stringify(data);
+            var obj = JSON.parse(data);
+            var display = "";
+
+            $.each(data, function(i, item) {
+                display += "<h3>" + data[i].name + "</h3>" +
+                           "<p>" + data[i].due_date + "</p>";
+            }); 
+
+            document.getElementById("todoList").innerHTML = display;
         })
     });
 }
