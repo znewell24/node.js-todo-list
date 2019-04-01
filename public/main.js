@@ -17,8 +17,5 @@ const flatpickr = require("flatpickr");
 var options = {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
-    onChange: function(selectedDates, dateStr, instance) {
-        alert("dates: " + selectedDates + " - dateStr: " + dateStr + " instance: " + instance);
-    },
 };
 $("time_due").flatpickr(options);
