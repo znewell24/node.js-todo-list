@@ -9,7 +9,7 @@ function getItems(request, response) {
                 ,items: data
             };
 
-            response.json(data.items);
+            response.json(data);
     });
 }
 
