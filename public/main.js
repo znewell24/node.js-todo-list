@@ -1,16 +1,13 @@
 function getItems() {
     $(document).ready(function () {
         $.getJSON("/getTodoList", function (data) {
-            var obj = JSON.parse(data);
-            var display = " ";
-
             $.each(data.items, function(i, item) {
-                display += "<h3>" + data.items[i].name + "</h3>" +
-                           "<p>" + data.items[i].due_date + "</p>";
+                display = "<h3>" + item.name + "</h3>" +
+                           "<p>" + item.due_date + "</p><br/>";
+                $(display).appendTo("todoList");
             }); 
 
-            document.getElementById("todoList").innerHTML = display;
-        })
+        });
     });
 }
 
