@@ -1,6 +1,7 @@
 function getItems() {
     $(document).ready(function () {
         $.getJSON("/getTodoList", function (data) {
+            $(data).appendTo("#todoList");
             $.each(data, function(i, item) {
                 JSON.stringify(item);
                 display = '<p>' + item.name + '</p>';
