@@ -7,7 +7,7 @@ function getItems() {
                            "<p>" + item.due_date + "</p><br/>";
                 $(display).appendTo("todoList");
             }); 
-
+            document.getElementById("todoList").innerHTML = JSON.stringify(data.items);
         });
     });
 }
