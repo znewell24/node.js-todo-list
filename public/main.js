@@ -3,7 +3,7 @@ function getItems() {
         $.getJSON("/getTodoList", function (data) {
             $.each(data, function(i, item) {
                 JSON.stringify(item);
-                display = '<h3>' + item.name + '</h3>';
+                display = '<p>' + item.name + '</p>';
                 display = '<p>' + item.due_date + '</p><br/>';
                 $(display).appendTo("#todoList");
             }); 
