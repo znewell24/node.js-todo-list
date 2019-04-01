@@ -12,6 +12,11 @@ function getItems() {
     });
 }
 
-// $('#myModal').on('shown.bs.modal', function () {
-//   $('#myInput').trigger('focus')
-// });
+var options = {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    onChange: function(selectedDates, dateStr, instance) {
+        alert("dates: " + selectedDates + " - dateStr: " + dateStr + " instance: " + instance);
+    },
+};
+flatpickr(document.querySelector("#time_due"), options);
