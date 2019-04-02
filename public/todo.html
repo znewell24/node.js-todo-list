@@ -9,11 +9,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
-
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <body onload="getItems()">
     <h1>To-Do List</h1>   
@@ -35,37 +30,26 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            <form action="addItem()" id="newItemForm">
                 <div class="form-group">
                   <label for="name" class="col-form-label">What do you need to do?</label>
-                  <input type="text" class="form-control" id="name">
+                  <input type="text" class="form-control" id="name" required>
                 </div>
                 <div class="form-group">
                   <label for="time_due" class="col-form-label">When?</label>
-                  <input type="datetime-local" class="form-control" id="time_due">
+                  <input type="datetime-local" placeholder="2019-04-15 15:00:00" 
+                        class="form-control" required pattern="\y{4}-\m{1,2}-\d{1,2} 00:00:00"  id="time_due">
                 </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Add to List</button>
+            <button type="submit" class="btn btn-primary" form="newItemForm">Add to List</button>
           </div>
         </div>
       </div>
     </div>
 
-<script>
-var options = {
-    enableTime: true,
-    dateFormat: "Y-m-d H:i",
-    onChange: function(selectedDates, dateStr, instance) {
-        alert("dates: " + selectedDates + " - dateStr: " + dateStr + " instance: " + instance);
-    },
-};
-flatpickr(document.querySelector("#widget"), options);
-</script>
-
-<div id="widget">Click this to edit time</div>
 
     <form action="/newItem" method="POST">
         <input type="text" placeholder="Get Money" name="item" required>

@@ -12,10 +12,10 @@ function getItems() {
     });
 }
 
-// const flatpickr = require("flatpickr");
+function addItem() {
+    var new_name = $("#name").val();
+    var new_due_date = $("#time_due").val();
 
-// var options = {
-//     enableTime: true,
-//     dateFormat: "Y-m-d H:i",
-// };
-// $("time_due").flatpickr(options);
+    $.post("/addItem", {name: new_name, due_date: new_due_date})
+
+}
