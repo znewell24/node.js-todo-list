@@ -12,20 +12,10 @@ function getItems() {
     });
 }
 
-const flatpickr = require("flatpickr");
+// const flatpickr = require("flatpickr");
 
-var options = {
-    enableTime: true,
-    dateFormat: "Y-m-d H:i",
-};
-$("time_due").flatpickr(options);
-
-$j(document).ready(function() {
-    flatpickr("#myDatePicker", { 
-        "dateFormat":"n/j/Y", 
-        "allowInput":true,
-        "onOpen": function(selectedDates, dateStr, instance) {
-            instance.setDate(instance.input.value, false);
-        }
-    });
-});
+// var options = {
+//     enableTime: true,
+//     dateFormat: "Y-m-d H:i",
+// };
+// $("time_due").flatpickr(options);
