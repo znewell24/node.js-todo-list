@@ -9,10 +9,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script>var $j = jQuery.noConflict();</script>
+    <script src="https://polygit.org/components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="frevvo-date-time.html">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>    
+    <link rel="stylesheet" type="text/css" href="http://www.w3schools.com/lib/w3.css" /> 
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
-
 </head>
 <body onload="getItems()">
     <h1>To-Do List</h1>   
@@ -53,9 +59,34 @@
       </div>
     </div>
 
-    <form action="/newItem" method="POST">
-        <input type="text" placeholder="Get Money" name="item" required>
-        <input type="submit">
-    </form>
+    <div class="w3-container w3-padding w3-border-top">
+          Testing of flatpickr wrapped in custom element:    
+
+          <div>
+            <frevvo-date-time date="true" required="true"
+                         placeholder="Enter a date value">
+            </frevvo-date-time>
+          </div>
+          
+    </div>
+
+
+
+        <div class="w3-container w3-padding w3-border-top">
+          Raw Testing of flatpickr:    
+            
+          <div>
+            <label for="myDatePicker">Pick a date</label>
+            <input id="myDatePicker" placeholder="Pick a date">
+          </div>
+
+
+
+    
+
+        <form action="/newItem" method="POST">
+            <input type="text" placeholder="Get Money" name="item" required>
+            <input type="submit">
+        </form>
 </body>
 </html>

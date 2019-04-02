@@ -19,3 +19,13 @@ var options = {
     dateFormat: "Y-m-d H:i",
 };
 $("time_due").flatpickr(options);
+
+$j(document).ready(function() {
+    flatpickr("#myDatePicker", { 
+        "dateFormat":"n/j/Y", 
+        "allowInput":true,
+        "onOpen": function(selectedDates, dateStr, instance) {
+            instance.setDate(instance.input.value, false);
+        }
+    });
+});
