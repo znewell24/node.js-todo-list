@@ -13,6 +13,16 @@ function getItems(request, response) {
     });
 }
 
+function addItem(request, response) {
+
+}
+
+function deleteItem(request, response) {
+
+}
+
 module.exports = {
-    getItems: getItems
+    getItems: getItems,
+    addItem: addItem,
+    deleteItem: deleteItem
 }

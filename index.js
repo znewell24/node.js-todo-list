@@ -9,6 +9,10 @@ app.use(express.static('public'));
 
 app.get('/getTodoList', controller.getItems);
 
+app.get('/addItem', controller.addItem);
+
+app.get('/deleteItem', controller.deleteItem);
+
 app.listen(port, function() {
     console.log(`Listening on port: ${port}`);
 })
