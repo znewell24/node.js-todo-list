@@ -3,8 +3,10 @@ function getItems() {
         $.getJSON("/getTodoList", function (data) {
             var content = '<ul class="list-group" style="text-align:center">';
             $.each(data.items, function(i,item){
-                content += '<button type="button" onclick="deleteItem(' + item.name + ')" class="btn btn-secondary" data-dismiss="modal">Delete Item</button>'
-                content += '<li class="list-group-item">' + item.name;
+                content += '<li class="list-group-item">' + 
+                           '<button type="button" style="float: left;" onclick="deleteItem('
+                            + item.name + ')" class="btn btn-secondary" data-dismiss="modal">Delete Item</button>'
+                content += item.name;
                 content += '<span class="badge badge-primary badge-pill">' + item.due_date + 
                 '</span>' + '</li>';
             });
