@@ -1,12 +1,12 @@
 function getItems() {
     $(document).ready(function () {
         $.getJSON("/getTodoList", function (data) {
-            var content = " ";
+            var content = '<ul class="list-group">';
             $.each(data.items, function(i,item){
-                content += '<p>' + item.name + '</p>';
-                content += '<p>' + item.due_date + '</p>';
-                content += '<br/>';
+                content += '<li class="list-group-item">' + item.name + '</br>';
+                content += item.due_date + '</li>';
             });
+            content += '</ul>';
             document.getElementById("todoList").innerHTML = content;
         });
     });
