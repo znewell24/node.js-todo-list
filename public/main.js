@@ -4,7 +4,8 @@ function getItems() {
             var content = '<ul class="list-group">';
             $.each(data.items, function(i,item){
                 content += '<li class="list-group-item">' + item.name + '</br>';
-                content += item.due_date + '</li>';
+                content += '<span class="badge badge-primary badge-pill">' + item.due_date + 
+                '</span>' + '</li>';
             });
             content += '</ul>';
             document.getElementById("todoList").innerHTML = content;
