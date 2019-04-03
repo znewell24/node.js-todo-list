@@ -16,17 +16,16 @@
            <div class="navbar-header">
              <a class="navbar-brand" href="#">Simple To-do</a>
            </div>
-        <ul class="nav navbar-nav">
-         <li class="active" onclick="getItems()">Your List</li>
-        </ul>
         </div>
     </nav>
-    <h1>To-Do List</h1>   
+
+    <br><br>
 
     <div id="todoList"></div>
-    <hr>
 
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <br><br>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="float: right;">
       Add Item to List
     </button>
 
@@ -60,10 +59,5 @@
       </div>
     </div>
 
-
-    <form action="/newItem" method="POST">
-        <input type="text" placeholder="Get Money" name="item" required>
-        <input type="submit">
-    </form>
 </body>
 </html>
