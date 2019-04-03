@@ -1,9 +1,9 @@
 function getItems() {
     $(document).ready(function () {
         $.getJSON("/getTodoList", function (data) {
-            var content = '<ul class="list-group">';
+            var content = '<ul class="list-group" style="text-align:center">';
             $.each(data.items, function(i,item){
-                content += '<li class="list-group-item">' + item.name + '</br>';
+                content += '<li class="list-group-item">' + item.name;
                 content += '<span class="badge badge-primary badge-pill">' + item.due_date + 
                 '</span>' + '</li>';
             });
