@@ -5,7 +5,7 @@ function getItems() {
             $.each(data.items, function(i,item){
                 content += '<li class="list-group-item">' + 
                            '<button style="float: left;" onclick="deleteItem('
-                            + item.name + ')" class="btn btn-secondary" data-dismiss="modal">Delete Item</button>'
+                            + JSON.stringify(item.name) + ')" class="btn btn-secondary" data-dismiss="modal">Delete Item</button>'
                 content += item.name;
                 content += '<span class="badge badge-primary badge-pill">' + item.due_date + 
                 '</span>' + '</li>';
