@@ -24,13 +24,6 @@ function getAllItems(callback) {
             callback(null, res.rows);
         });
     });
-
-        // const items = [
-        //     {id: 1, item: "do laundry", complete: "04-10-19"}
-        //     ,{id: 2, item: "doctors appointment", complete: "04-10-19"}
-        //     ,{id: 3, item: "do dishes", complete: "04-12-19"}
-        // ]
-
 }
 
 function addItem(name, due, callback) {
@@ -51,8 +44,22 @@ function addItem(name, due, callback) {
     });
 }
 
-function deleteItem(params, callback) {
+function deleteItem(name, callback) {
+    const sql = "DELETE FROM items WHERE NAME = ($1) RETURNING *";
+    const params = [name];
 
+    pool.query(sql, params, function(error, result) {
+        if (error) {
+        console.log("An error occurred in the DB");
+            console.log(error);
+
+            callback(error, null);
+        } else {
+            console.log("DB Query finished");
+            console.log(result.rows);
+            callback(null, result.rows);
+        }
+    });
 }
 
 function createUser(username, password, callback) {

@@ -22,13 +22,20 @@ function addItem(request, response) {
             success: true
             ,item: data
         };
-        
+
         response.json(newItem);
     });
 }
 
 function deleteItem(request, response) {
+    const name = request.body.name;
 
+    model.deleteItem(name, function(error, data) {
+        deletedItem = {
+            success: true
+            ,item: data
+        };
+    });
 }
 
 function createUser(request, response) {

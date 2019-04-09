@@ -34,6 +34,6 @@ function deleteItem(item_name) {
     var item = item_name;
 
     $.post("/deleteItem", {name: item}, function(err, results) {
-
+        getItems();
     });
 }
