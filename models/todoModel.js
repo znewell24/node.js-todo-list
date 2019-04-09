@@ -34,6 +34,11 @@ function getAllItems(callback) {
 
 }
 
+function addItem(params, callback) {
+
+}
+
 module.exports = {
-    getAllItems: getAllItems
+    getAllItems: getAllItems,
+    addItem: addItem
 };

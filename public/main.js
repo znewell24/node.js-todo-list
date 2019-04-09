@@ -20,7 +20,9 @@ function addItem() {
     var new_name = $("#name").val();
     var new_due_date = $("#time_due").val();
 
-    $.post("/addItem", {name: new_name, due_date: new_due_date});
+    $.post("/addItem", {name: new_name, due_date: new_due_date}, function(err, results) {
+        
+    });
 
 }
 

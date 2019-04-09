@@ -14,7 +14,9 @@ function getItems(request, response) {
 }
 
 function addItem(request, response) {
+    var data = [request.body.name, request.body.due_date];
 
+    
 }
 
 function deleteItem(request, response) {
