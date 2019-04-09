@@ -22,7 +22,6 @@ function getAllItems(callback) {
             } 
 
             callback(null, res.rows);
-            pool.end();
         });
     });
 
