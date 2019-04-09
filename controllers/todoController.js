@@ -14,17 +14,37 @@ function getItems(request, response) {
 }
 
 function addItem(request, response) {
-    var data = [request.body.name, request.body.due_date];
+    const name = request.body.name;
+    const due = request.body.due_date;
 
-    
+    model.addItem(name, due, function(error, data) {
+        newItem = {
+            success: true
+            ,item: data
+        };
+        
+        response.json(newItem);
+    });
 }
 
 function deleteItem(request, response) {
 
 }
 
+function createUser(request, response) {
+    const username = request.body.username;
+    const password = request.body.password;
+
+    console.log(`Registering new user: ${username}:${password}`);
+
+    model.createUser(username, password, function(error, data) {
+        response.redirect("todo.html");
+    });
+}
+
 module.exports = {
     getItems: getItems,
     addItem: addItem,
-    deleteItem: deleteItem
+    deleteItem: deleteItem,
+    createUser: createUser
 }

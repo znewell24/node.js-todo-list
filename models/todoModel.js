@@ -34,11 +34,51 @@ function getAllItems(callback) {
 
 }
 
-function addItem(params, callback) {
+function addItem(name, due, callback) {
+    const sql = "INSERT INTO items (name, due_date) VALUES($1, $2) RETURNING id";
+    const params = [name, due];
 
+    pool.query(sql, params, function(error, result) {
+        if (error) {
+            console.log("An error occurred in the DB");
+            console.log(error);
+
+            callback(error, null);
+        } else {
+            console.log("DB Query finished");
+            console.log(result.rows);
+            callback(null, result.rows);
+        }
+    });
+}
+
+function deleteItem(params, callback) {
+
+}
+
+function createUser(username, password, callback) {
+
+    const sql = "INSERT INTO login (username, password) VALUES($1, $2) RETURNING  id";
+    const params = [username, password];
+
+    pool.query(sql, params, function(error, result) {
+        if (error) {
+            console.log("An error occurred in the DB");
+            console.log(error);
+
+            callback(error, null);
+        } else {
+            console.log("DB Query finished");
+            console.log(result.rows);
+            callback(null, result.rows);
+        }
+
+    });
 }
 
 module.exports = {
     getAllItems: getAllItems,
-    addItem: addItem
+    addItem: addItem,
+    deleteItem: deleteItem,
+    createUser: createUser
 };
