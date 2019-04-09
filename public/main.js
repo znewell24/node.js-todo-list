@@ -4,10 +4,8 @@ function getItems() {
             var content = '<ul class="list-group" style="text-align:center">';
             $.each(data.items, function(i,item){
                 content += '<li class="list-group-item">' + 
-                           '<button style="float: left;" onclick="$.post("/deleteItem", {name: ' + 
-                           item.name + 
-                           '}, 
-                           function(err, results) { getItems()});" class="btn btn-secondary" data-dismiss="modal">Delete Item</button>'
+                           '<button style="float: left;" onclick="deleteItem('
+                            + "'" + item.name + "'" + ')" class="btn btn-secondary" data-dismiss="modal">Delete Item</button>'
                 content += item.name;
                 content += '<span class="badge badge-primary badge-pill">' + item.due_date + 
                 '</span>' + '</li>';
