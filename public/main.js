@@ -37,3 +37,17 @@ function deleteItem(item_name) {
         getItems()
     });
 }
+
+function login() {
+    var username = $("#username").val();
+    var password = $("#password").val();
+
+    $.post("/addUser",
+    {
+        username: username
+        , password: password
+    },
+    function(err, data) {
+        getItems();
+    });
+}
